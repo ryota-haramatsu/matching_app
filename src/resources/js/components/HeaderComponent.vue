@@ -5,16 +5,17 @@
         <div class="d-flex">
           <!-- サービスロゴ -->
           <div class="navbar-brand-box">
-            <!-- <a href="/kyouan/list" class="logo logo-dark"> -->
-            <!-- <span class="logo-lg">
-                <img src="/images/logo-dark.png" alt="" height="17" />
-              </span> -->
-            キョウ遊 ~日本語教師のための教案共有サイト~
-            <!-- </a> -->
+            <router-link :to="{ name: 'kyouan.list' }">
+              キョウ遊 ~日本語教師のための教案共有サイト~
+            </router-link>
           </div>
         </div>
-
-        <div class="d-flex">
+        <div>
+          <!-- 新規作成 -->
+          <router-link :to="{ name: 'kyouan.create' }" class="new_create">
+            <v-icon>mdi-plus-circle-outline</v-icon>
+            <span class="text-secondary">投稿</span>
+          </router-link>
           <!-- 通知 -->
           <div class="dropdown d-inline-block">
             <button
@@ -25,7 +26,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i class="bx bx-bell bx-tada"></i>
+              <v-icon>mdi-email</v-icon>
               <span class="badge badge-danger badge-pill">3</span>
             </button>
             <div
@@ -77,7 +78,6 @@
               </div>
             </div>
           </div>
-
           <!-- ユーザー -->
           <div class="dropdown d-inline-block">
             <button
@@ -94,11 +94,15 @@
               <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <!-- item-->
-              <a class="dropdown-item" href="/teacher/1/profile"
-                ><i class="bx bx-user font-size-16 align-middle mr-1"></i>
-                <span key="t-profile">プロフィール</span></a
+              <!-- プロフィールなど-->
+              <router-link
+                class="dropdown-item"
+                :to="{ name: 'teacher.profie', params: { teacherId: 1 } }"
               >
+                <i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                <span key="t-profile">プロフィール</span>
+              </router-link>
+
               <a class="dropdown-item d-block" href="#"
                 ><i class="bx bx-wrench font-size-16 align-middle mr-1"></i>
                 <span key="t-settings">設定</span></a
@@ -116,23 +120,11 @@
       </nav>
     </div>
   </div>
-  <!-- <div class="container-fluid bg-dark mb-3">
-    <div class="container">
-      <nav class="navbar navbar-dark">
-        <span class="navbar-brand mb-0 h1">Maching App</span>
-        <div>
-          <router-link v-bind:to="{ name: 'task.list' }">
-            <button class="btn btn-success">一覧</button>
-          </router-link>
-          <router-link v-bind:to="{ name: 'task.create' }">
-            <button class="btn btn-success">追加</button>
-          </router-link>
-        </div>
-      </nav>
-    </div>
-  </div> -->
 </template>
 
 <script>
 export default {};
 </script>
+
+<style lang="scss" scoped>
+</style>

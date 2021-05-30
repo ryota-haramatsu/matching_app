@@ -5,17 +5,16 @@
         <v-container>
           <v-row class="home-hero__content-text">
             <div class="overlay1"></div>
-            <v-col id="movie_image">
+            <v-col sm="12" md="6">
               <!-- 左側 画像 -->
               <v-img
-                v-on:click="play"
                 class="rounded-lg"
                 height="250"
                 src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-              ></v-img> 
+              ></v-img>
               <!-- 動画リンクか画像を選択 -->
             </v-col>
-            <v-col>
+            <v-col sm="12" md="6">
               <p>「あなたの教案タイトル」</p>
               <p class="home-hero__content-text-sub mb-0">
                 対象学習者: JLPT N5レベル
@@ -79,7 +78,6 @@ export default {
   // methods:{
   //   play: function(event) {
   //     event.preventDefault();
-
   //     alert("good")
   //   }
   // }

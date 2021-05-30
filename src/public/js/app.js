@@ -2117,17 +2117,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2173,7 +2162,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2187,7 +2175,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2343,6 +2330,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38819,10 +38808,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55& ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38837,232 +38826,264 @@ var render = function() {
   return _c("div", { staticClass: "container-fluid bg-white" }, [
     _c("div", { staticClass: "container" }, [
       _c("nav", { staticClass: "navbar navbar-dark" }, [
-        _vm._m(0),
-        _vm._v(" "),
         _c("div", { staticClass: "d-flex" }, [
-          _c("div", { staticClass: "dropdown d-inline-block" }, [
-            _vm._m(1),
-            _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "navbar-brand-box" },
+            [
+              _c("router-link", { attrs: { to: { name: "kyouan.list" } } }, [
+                _vm._v(
+                  "\n            キョウ遊 ~日本語教師のための教案共有サイト~\n          "
+                )
+              ])
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
             _c(
-              "div",
+              "router-link",
               {
-                staticClass:
-                  "dropdown-menu dropdown-menu-lg dropdown-menu-right p-0",
-                attrs: {
-                  "aria-labelledby": "page-header-notifications-dropdown"
-                }
+                staticClass: "new_create",
+                attrs: { to: { name: "kyouan.create" } }
               },
               [
-                _c("div", { staticClass: "p-3" }, [
-                  _c("div", { staticClass: "row align-items-center" }, [
-                    _c("div", { staticClass: "col" }, [
-                      _c("h6", { key: "t-notifications", staticClass: "m-0" }, [
-                        _vm._v("通知")
+                _c("v-icon", [_vm._v("mdi-plus-circle-outline")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "text-secondary" }, [_vm._v("投稿")])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "dropdown d-inline-block" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn header-item noti-icon waves-effect",
+                  attrs: {
+                    type: "button",
+                    id: "page-header-notifications-dropdown",
+                    "data-toggle": "dropdown",
+                    "aria-haspopup": "true",
+                    "aria-expanded": "false"
+                  }
+                },
+                [
+                  _c("v-icon", [_vm._v("mdi-email")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge badge-danger badge-pill" }, [
+                    _vm._v("3")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "dropdown-menu dropdown-menu-lg dropdown-menu-right p-0",
+                  attrs: {
+                    "aria-labelledby": "page-header-notifications-dropdown"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "p-3" }, [
+                    _c("div", { staticClass: "row align-items-center" }, [
+                      _c("div", { staticClass: "col" }, [
+                        _c(
+                          "h6",
+                          { key: "t-notifications", staticClass: "m-0" },
+                          [_vm._v("通知")]
+                        )
                       ])
                     ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticStyle: { "max-height": "230px" },
-                    attrs: { "data-simplebar": "" }
-                  },
-                  [
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticStyle: { "max-height": "230px" },
+                      attrs: { "data-simplebar": "" }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "text-reset notification-item",
+                          attrs: { href: "" }
+                        },
+                        [
+                          _c("div", { staticClass: "media" }, [
+                            _vm._m(0),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "media-body" }, [
+                              _c(
+                                "h6",
+                                {
+                                  key: "t-your-order",
+                                  staticClass: "mt-0 mb-1"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      Your order is placed\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "font-size-12 text-muted" },
+                                [
+                                  _c(
+                                    "p",
+                                    { key: "t-grammer", staticClass: "mb-1" },
+                                    [
+                                      _vm._v(
+                                        "\n                        If several languages coalesce the grammar\n                      "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "mb-0" }, [
+                                    _c("i", {
+                                      staticClass: "mdi mdi-clock-outline"
+                                    }),
+                                    _vm._v(" "),
+                                    _c("span", { key: "t-min-ago" }, [
+                                      _vm._v("3 min ago")
+                                    ])
+                                  ])
+                                ]
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-2 border-top" }, [
                     _c(
                       "a",
                       {
-                        staticClass: "text-reset notification-item",
-                        attrs: { href: "" }
+                        staticClass:
+                          "btn btn-sm btn-link font-size-14 btn-block text-center",
+                        attrs: { href: "javascript:void(0)" }
                       },
                       [
-                        _c("div", { staticClass: "media" }, [
-                          _vm._m(2),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "media-body" }, [
-                            _c(
-                              "h6",
-                              { key: "t-your-order", staticClass: "mt-0 mb-1" },
-                              [
-                                _vm._v(
-                                  "\n                      Your order is placed\n                    "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "font-size-12 text-muted" },
-                              [
-                                _c(
-                                  "p",
-                                  { key: "t-grammer", staticClass: "mb-1" },
-                                  [
-                                    _vm._v(
-                                      "\n                        If several languages coalesce the grammar\n                      "
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "mb-0" }, [
-                                  _c("i", {
-                                    staticClass: "mdi mdi-clock-outline"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("span", { key: "t-min-ago" }, [
-                                    _vm._v("3 min ago")
-                                  ])
-                                ])
-                              ]
-                            )
-                          ])
+                        _c("i", {
+                          staticClass: "mdi mdi-arrow-right-circle mr-1"
+                        }),
+                        _vm._v(" "),
+                        _c("span", { key: "t-view-more" }, [
+                          _vm._v("もっと見る")
                         ])
                       ]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "p-2 border-top" }, [
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "dropdown d-inline-block" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn header-item waves-effect",
+                  attrs: {
+                    type: "button",
+                    id: "page-header-user-dropdown",
+                    "data-toggle": "dropdown",
+                    "aria-haspopup": "true",
+                    "aria-expanded": "false"
+                  }
+                },
+                [
                   _c(
-                    "a",
+                    "span",
                     {
-                      staticClass:
-                        "btn btn-sm btn-link font-size-14 btn-block text-center",
-                      attrs: { href: "javascript:void(0)" }
+                      key: "t-henry",
+                      staticClass: "d-none d-xl-inline-block ml-1"
+                    },
+                    [_vm._v("Henry")]
+                  ),
+                  _vm._v(" "),
+                  _c("i", {
+                    staticClass: "mdi mdi-chevron-down d-none d-xl-inline-block"
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dropdown-menu dropdown-menu-right" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "dropdown-item",
+                      attrs: {
+                        to: { name: "teacher.profie", params: { teacherId: 1 } }
+                      }
                     },
                     [
                       _c("i", {
-                        staticClass: "mdi mdi-arrow-right-circle mr-1"
+                        staticClass: "bx bx-user font-size-16 align-middle mr-1"
                       }),
                       _vm._v(" "),
-                      _c("span", { key: "t-view-more" }, [_vm._v("もっと見る")])
+                      _c("span", { key: "t-profile" }, [_vm._v("プロフィール")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "dropdown-item d-block",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _c("i", {
+                        staticClass:
+                          "bx bx-wrench font-size-16 align-middle mr-1"
+                      }),
+                      _vm._v(" "),
+                      _c("span", { key: "t-settings" }, [_vm._v("設定")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "dropdown-divider" }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "dropdown-item text-danger",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _c("i", {
+                        staticClass:
+                          "bx bx-power-off font-size-16 align-middle mr-1 text-danger"
+                      }),
+                      _vm._v(" "),
+                      _c("span", { key: "t-logout" }, [_vm._v("ログアウト")])
                     ]
                   )
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dropdown d-inline-block" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn header-item waves-effect",
-                attrs: {
-                  type: "button",
-                  id: "page-header-user-dropdown",
-                  "data-toggle": "dropdown",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [
-                _c(
-                  "span",
-                  {
-                    key: "t-henry",
-                    staticClass: "d-none d-xl-inline-block ml-1"
-                  },
-                  [_vm._v("Henry")]
-                ),
-                _vm._v(" "),
-                _c("i", {
-                  staticClass: "mdi mdi-chevron-down d-none d-xl-inline-block"
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "dropdown-menu dropdown-menu-right" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "dropdown-item",
-                  attrs: { href: "/teacher/1/profile" }
-                },
-                [
-                  _c("i", {
-                    staticClass: "bx bx-user font-size-16 align-middle mr-1"
-                  }),
-                  _vm._v(" "),
-                  _c("span", { key: "t-profile" }, [_vm._v("プロフィール")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "dropdown-item d-block", attrs: { href: "#" } },
-                [
-                  _c("i", {
-                    staticClass: "bx bx-wrench font-size-16 align-middle mr-1"
-                  }),
-                  _vm._v(" "),
-                  _c("span", { key: "t-settings" }, [_vm._v("設定")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "dropdown-divider" }),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "dropdown-item text-danger",
-                  attrs: { href: "#" }
-                },
-                [
-                  _c("i", {
-                    staticClass:
-                      "bx bx-power-off font-size-16 align-middle mr-1 text-danger"
-                  }),
-                  _vm._v(" "),
-                  _c("span", { key: "t-logout" }, [_vm._v("ログアウト")])
-                ]
+                ],
+                1
               )
             ])
-          ])
-        ])
+          ],
+          1
+        )
       ])
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex" }, [
-      _c("div", { staticClass: "navbar-brand-box" }, [
-        _vm._v(
-          "\n          キョウ遊 ~日本語教師のための教案共有サイト~\n          "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn header-item noti-icon waves-effect",
-        attrs: {
-          type: "button",
-          id: "page-header-notifications-dropdown",
-          "data-toggle": "dropdown",
-          "aria-haspopup": "true",
-          "aria-expanded": "false"
-        }
-      },
-      [
-        _c("i", { staticClass: "bx bx-bell bx-tada" }),
-        _vm._v(" "),
-        _c("span", { staticClass: "badge badge-danger badge-pill" }, [
-          _vm._v("3")
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -39212,7 +39233,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-col",
-                        { attrs: { id: "movie_image" } },
+                        { attrs: { sm: "12", md: "6" } },
                         [
                           _c("v-img", {
                             staticClass: "rounded-lg",
@@ -39220,8 +39241,7 @@ var render = function() {
                               height: "250",
                               src:
                                 "https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                            },
-                            on: { click: _vm.play }
+                            }
                           })
                         ],
                         1
@@ -39229,6 +39249,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-col",
+                        { attrs: { sm: "12", md: "6" } },
                         [
                           _c("p", [_vm._v("「あなたの教案タイトル」")]),
                           _vm._v(" "),
@@ -39495,72 +39516,82 @@ var render = function() {
           { key: n, attrs: { cols: "4" } },
           [
             _c(
-              "v-card",
-              { staticClass: "mx-auto my-12 mx-1 mb-2" },
+              "router-link",
+              {
+                attrs: { to: { name: "kyouan.show", params: { kyouanId: 1 } } }
+              },
               [
                 _c(
-                  "template",
-                  { slot: "progress" },
-                  [
-                    _c("v-progress-linear", {
-                      attrs: {
-                        color: "deep-purple",
-                        height: "10",
-                        indeterminate: ""
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("v-img", {
-                  attrs: {
-                    height: "250",
-                    src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                  }
-                }),
-                _vm._v(" "),
-                _c("v-card-title", [_vm._v("Cafe Badilico")]),
-                _vm._v(" "),
-                _c(
-                  "v-card-text",
+                  "v-card",
+                  { staticClass: "mx-auto my-12 mx-1 mb-2" },
                   [
                     _c(
-                      "v-row",
-                      { staticClass: "mx-0", attrs: { align: "center" } },
+                      "template",
+                      { slot: "progress" },
                       [
-                        _c("v-rating", {
+                        _c("v-progress-linear", {
                           attrs: {
-                            value: 4.5,
-                            color: "amber",
-                            dense: "",
-                            "half-increments": "",
-                            readonly: "",
-                            size: "14"
+                            color: "deep-purple",
+                            height: "10",
+                            indeterminate: ""
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "grey--text ms-4" }, [
-                          _vm._v("4.5 (413)")
-                        ])
+                        })
                       ],
                       1
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "my-4 subtitle-1" }, [
-                      _vm._v("$ • Italian, Cafe")
-                    ]),
+                    _c("v-img", {
+                      attrs: {
+                        height: "250",
+                        src:
+                          "https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                      }
+                    }),
                     _vm._v(" "),
-                    _c("div", [
-                      _vm._v(
-                        "\n            Small plates, salads & sandwiches - an intimate setting with 12\n            indoor seats plus patio seating.\n          "
-                      )
-                    ])
+                    _c("v-card-title", [_vm._v("Cafe Badilico")]),
+                    _vm._v(" "),
+                    _c(
+                      "v-card-text",
+                      [
+                        _c(
+                          "v-row",
+                          { staticClass: "mx-0", attrs: { align: "center" } },
+                          [
+                            _c("v-rating", {
+                              attrs: {
+                                value: 4.5,
+                                color: "amber",
+                                dense: "",
+                                "half-increments": "",
+                                readonly: "",
+                                size: "14"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "grey--text ms-4" }, [
+                              _vm._v("4.5 (413)")
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "my-4 subtitle-1" }, [
+                          _vm._v("$ • Italian, Cafe")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v(
+                            "\n              Small plates, salads & sandwiches - an intimate setting with 12\n              indoor seats plus patio seating.\n            "
+                          )
+                        ])
+                      ],
+                      1
+                    )
                   ],
-                  1
+                  2
                 )
               ],
-              2
+              1
             )
           ],
           1
@@ -100454,7 +100485,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=template&id=153bfd55& */ "./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&");
+/* harmony import */ var _HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true& */ "./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true&");
 /* harmony import */ var _HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/HeaderComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -100466,11 +100497,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _HeaderComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "153bfd55",
   null
   
 )
@@ -100496,19 +100527,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true& ***!
+  \************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderComponent.vue?vue&type=template&id=153bfd55& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

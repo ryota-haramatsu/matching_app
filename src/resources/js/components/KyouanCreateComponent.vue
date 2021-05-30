@@ -17,7 +17,6 @@
             <label for="person-in-charge" class="col-sm-3 col-form-label"
               >Person In Charge</label
             >
-
             <input
               type="text"
               class="col-sm-9 form-control"
