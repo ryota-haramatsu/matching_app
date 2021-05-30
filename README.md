@@ -1,6 +1,6 @@
 # matching_app
 
-docker-compose exec app bash
+docker-compose up -d && docker-compose exec app bash && php artisan serve --host 0.0.0.0 --port 80
 
 docker-compose up -d / docker-compose restart
 
@@ -35,3 +35,6 @@ php artisan migrate --seed
 mysql -u root -p -h 127.0.0.1 -P 3306
 
 docker-compose exec db bash
+
+
+作りたいもの

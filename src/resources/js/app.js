@@ -1,9 +1,13 @@
 import VueRouter from 'vue-router';
+import Vuetify from './plugins/vuetify'
+
 import HeaderComponent from "./components/HeaderComponent";
-import TaskListComponent from "./components/TaskListComponent";
-import TaskShowComponent from "./components/TaskShowComponent";
-import TaskCreateComponent from "./components/TaskCreateComponent";
-import TaskEditComponent from "./components/TaskEditComponent";
+import KyouanListComponent from "./components/KyouanListComponent";
+import KyouanDetailComponent from "./components/KyouanDetailComponent";
+import KyouanCreateComponent from "./components/KyouanCreateComponent";
+import KyouanEditComponent from "./components/KyouanEditComponent";
+import TeacherProfileComponent from "./components/TeacherProfileComponent";
+
 
 require('./bootstrap');
 
@@ -14,35 +18,41 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            path: '/tasks',
-            name: 'task.list',
-            component: TaskListComponent
+            path: '/kyouan/list',
+            name: 'kyouan.list',
+            component: KyouanListComponent
         },
         {
-            path: '/tasks/create',
-            name: 'task.create',
-            component: TaskCreateComponent
+            path: '/kyouan/create',
+            name: 'kyouan.create',
+            component: KyouanCreateComponent
         },
         {
-            path: '/tasks/:taskId',
-            name: 'task.show',
-            component: TaskShowComponent,
+            path: '/kyouan/:kyouanId',
+            name: 'kyouan.show',
+            component: KyouanDetailComponent,
             props: true
 
         },
         {
-            path: '/tasks/:taskId/edit',
-            name: 'task.edit',
-            component: TaskEditComponent,
+            path: '/kyouan/:kyouanId/edit',
+            name: 'kyouan.edit',
+            component: KyouanEditComponent,
             props: true
         },
+        {
+            path: '/teacher/:teacherId/profile',
+            name: 'teacher.profie',
+            component: TeacherProfileComponent,
+            props: true
+        }
     ]
 });
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('header-component', HeaderComponent);
 
 const app = new Vue({
     el: '#app',
+    vuetify: Vuetify,
     router
 });
