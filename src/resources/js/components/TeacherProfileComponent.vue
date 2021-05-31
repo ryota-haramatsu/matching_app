@@ -12,17 +12,16 @@
           <v-col cols="10">
             <v-card>
               <v-card-text>
-                <v-text-field
-                  v-model="form.name"
-                  label="名前"
-                ></v-text-field>
+                <v-text-field v-model="form.name" label="名前"></v-text-field>
                 <v-text-field
                   v-model="form.contactEmail"
                   label="Email Address"
                 ></v-text-field>
               </v-card-text>
               <v-card-actions>
-                <v-btn class="bg-danger text-white font-weight-bold"> 保存 </v-btn>
+                <v-btn class="bg-danger text-white font-weight-bold">
+                  保存
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -33,10 +32,8 @@
 </template>
 
 <script>
-// import AvatarPicker from "~/components/AvatarPicker";
 export default {
   pageTitle: "My Profile",
-  // components: { AvatarPicker },
   data() {
     return {
       loading: false,

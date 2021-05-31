@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid bg-white">
     <div class="container">
-      <nav class="navbar navbar-dark">
+      <nav class="navbar navbar-dark" style="flex-flow: row">
         <div class="d-flex">
           <!-- サービスロゴ -->
           <div class="navbar-brand-box">
@@ -10,6 +10,9 @@
             </router-link>
           </div>
         </div>
+        <router-link class="button button--link" to="/login">
+          ログイン / 新規登録
+        </router-link>
         <div>
           <!-- 新規作成 -->
           <router-link :to="{ name: 'kyouan.create' }" class="new_create">
@@ -97,7 +100,7 @@
               <!-- プロフィールなど-->
               <router-link
                 class="dropdown-item"
-                :to="{ name: 'teacher.profie', params: { teacherId: 1 } }"
+                :to="{ name: 'teacher.profile', params: { teacherId: 1 } }"
               >
                 <i class="bx bx-user font-size-16 align-middle mr-1"></i>
                 <span key="t-profile">プロフィール</span>
