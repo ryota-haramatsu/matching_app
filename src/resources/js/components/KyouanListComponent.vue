@@ -1,7 +1,7 @@
  <template>
   <div class="container">
     <div class="row">
-      <v-col cols="4" v-for="n in 4" :key="n">
+      <v-col sm="12" md="6" lg="4" v-for="n in 4" :key="n">
         <router-link :to="{ name: 'kyouan.show', params: { kyouanId: 1 } }">
           <v-card class="mx-auto my-12 mx-1 mb-2">
             <template slot="progress">

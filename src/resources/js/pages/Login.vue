@@ -16,7 +16,7 @@
         Register
       </li>
     </ul>
-    <div class="panel" v-show="tab === 1">
+    <div class="panel bg-white" v-show="tab === 1">
       <form class="form" @submit.prevent="login">
         <label for="login-email">Email</label>
         <input
@@ -37,7 +37,7 @@
         </div>
       </form>
     </div>
-    <div class="panel" v-show="tab === 2">
+    <div class="panel bg-white" v-show="tab === 2">
       <form class="form" @submit.prevent="register">
         <label for="username">Name</label>
         <input
@@ -93,9 +93,6 @@ export default {
     };
   },
   methods: {
-    login() {
-      console.log(this.loginForm);
-    },
     async register() {
       // this.$store からストアを参照できる
       // dispatchでアクションを呼び出し authの(actionの)registerメソッド
@@ -103,6 +100,12 @@ export default {
       await this.$store.dispatch("auth/register", this.registerForm);
 
       // トップページに遷移
+      this.$router.push("/kyouan/list");
+    },
+
+    async login() {
+      await this.$store.dispatch("auth/login", this.loginForm);
+
       this.$router.push("/kyouan/list");
     },
   },

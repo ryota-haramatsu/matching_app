@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid bg-white">
+  <div class="container-fluid header-bg">
     <div class="container">
       <nav class="navbar navbar-dark" style="flex-flow: row">
         <div class="d-flex">
