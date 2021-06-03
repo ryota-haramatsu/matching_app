@@ -5,15 +5,15 @@
         <div class="d-flex">
           <!-- サービスロゴ -->
           <div class="navbar-brand-box">
-            <router-link :to="{ name: 'kyouan.list' }">
+            <router-link v-if="isLogin" :to="{ name: 'kyouan.list' }">
               キョウ遊 ~日本語教師のための教案共有サイト~
             </router-link>
+            <div v-else>キョウ遊 ~日本語教師のための教案共有サイト~</div>
           </div>
         </div>
-        <router-link class="button button--link" to="/login">
-          ログイン / 新規登録
-        </router-link>
-        <div>
+
+        <!-- ログイン済みのみ表示 -->
+        <div v-if="isLogin">
           <!-- 新規作成 -->
           <router-link :to="{ name: 'kyouan.create' }" class="new_create">
             <v-icon>mdi-plus-circle-outline</v-icon>
@@ -91,9 +91,9 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <span class="d-none d-xl-inline-block ml-1" key="t-henry"
-                >Henry</span
-              >
+              <span class="d-none d-xl-inline-block ml-1" key="">
+                {{ username }}
+              </span>
               <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
@@ -120,13 +120,25 @@
             </div>
           </div>
         </div>
+        <router-link v-else class="button button--link" to="/login">
+          ログイン / 新規登録
+        </router-link>
       </nav>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isLogin() {
+      return this.$store.getters["auth/check"];
+    },
+    username() {
+      return this.$store.getters["auth/username"];
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

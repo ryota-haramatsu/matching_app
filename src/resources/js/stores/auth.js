@@ -9,7 +9,10 @@ const state = {
     user: null
 }
 
-const getters = {}
+const getters = {
+    check: state => !!state.user, // ログインチェック用
+    username: state => state.user ? state.user.name : ''
+}
 
 // ステートの値を更新
 const mutations = {
@@ -30,7 +33,13 @@ const actions = {
 
     async login(context, data) {
         const response = await axios.post('/api/login', data)
+        //失敗したときの処理
         context.commit('setUser', response.data)
+    },
+
+    async logout(context) {
+        await axios.post('/api/logout')
+        context.commit('setUser', null)
     }
 }
 
