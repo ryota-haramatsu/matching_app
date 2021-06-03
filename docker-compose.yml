@@ -11,9 +11,9 @@ services:
     volumes:
       - ./src/:/var/www/html
     environment:
-      - DB_CONNECTION=mysql
+      - DB_CONNECTION=${DB_CONNECTION}
       - DB_HOST=db
-      - DB_PORT=4306
+      - DB_PORT=3306
       - DB_DATABASE=${DB_NAME}
       - DB_USERNAME=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
@@ -32,9 +32,9 @@ services:
   db:
     build:
       context: .
-      dockerfile: ./docker/mysql/Dockerfile
+      dockerfile: ./docker/mysql/
     ports:
-      - ${DB_PORT}:3306
+      - 4306:3306
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
