@@ -32,9 +32,13 @@ const actions = {
     },
 
     async login(context, data) {
-        const response = await axios.post('/api/login', data)
-        //失敗したときの処理
-        context.commit('setUser', response.data)
+        await axios.post('/api/login', data).then(res => {
+            context.commit('setUser', res.data);
+            return true;
+        }).catch(error => {
+            //失敗したときの処理
+            return error;
+        });
     },
 
     async logout(context) {

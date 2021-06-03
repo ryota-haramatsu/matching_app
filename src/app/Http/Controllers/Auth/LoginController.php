@@ -40,7 +40,14 @@ class LoginController extends Controller
     }
 
     // ログイン認証 routeでloginをして authenticatedを上書き
-    protected function authenticated(Request $request, $user) 
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user)
     {
         return $user;
     }
