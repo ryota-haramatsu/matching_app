@@ -3,43 +3,41 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4.1-fpm
-        environment:
-          - APP_DEBUG: true
-          - APP_ENV: testing
-          - DB_CONNECTION: mysql 
-          - DB_DATABASE: matching_webapp
-          - DB_USERNAME: ryota_haramatsu
-
       - image: circleci/mysql:8.0
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - MYSQL_DATABASE: matching_webapp
-          - MYSQL_PASSWORD: root
+    environment:
+      - DB_CONNECTION: circle_testing 
 
     working_directory: ~/ci-demo
+
     steps:
       - checkout
       - run:
           name: Update apt-get
           command: sudo apt-get update
+
       - run:
           name: Docker php extensions install
           command: sudo docker-php-ext-install pdo_mysql
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "src/composer.json" }}
+
       - run:
-          name: Install PHP libraries
+          name: composer install
           working_directory: src
           command: composer install -n --prefer-dist
+
       - save_cache:
           paths: 
             - ./vendor
           key: v1-dependencies-{{ checksum "src/composer.json" }}
+
       - run: 
           name: Setting Encryption key
           working_directory: src
           command: php artisan key:generate
+          
       - run:
           name: Run PHPUnit
           working_directory: src
