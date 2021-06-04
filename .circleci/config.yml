@@ -30,6 +30,7 @@ jobs:
           working_directory: src
           command: composer install -n --prefer-dist
       - save_cache:
+          path: '/vendor'
           key: v1-dependencies-{{ checksum "src/composer.json" }}
       - run: echo "APP_KEY=" > .env.testing
       - run: php artisan key:generate
