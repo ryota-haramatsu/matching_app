@@ -33,9 +33,6 @@ jobs:
           paths: 
             - ./vendor
           key: v1-dependencies-{{ checksum "src/composer.json" }}
-      - run: echo "APP_KEY=" > .env.testing
-      - run: php artisan key:generate
-      - run: php artisan migrate
       - run:
           name: Run PHPUnit
           command: vendor/bin/phpunit
