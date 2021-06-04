@@ -25,15 +25,12 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "src/composer.json" }}
-            - v1-dependencies-
       - run:
           name: Install PHP libraries
           working_directory: src
           command: composer install -n --prefer-dist
       - save_cache:
-          paths:
-            - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+          key: v1-dependencies-{{ checksum "src/composer.json" }}
       - run: echo "APP_KEY=" > .env.testing
       - run: php artisan key:generate
       - run: php artisan migrate
