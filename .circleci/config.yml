@@ -2,10 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.3.0-node-browsers
-      - image: circleci/mariadb:10.4
-    environment:
-      - DB_CONNECTION: circle_testing
+      - image: circleci/php:7.4.1-fpm
+        environment:
+          - APP_DEBUG: true
+          - APP_ENV: testing
+          - DB_CONNECTION: ${DB_CONNECTION}
+          - DB_DATABASE: ${DB_NAME}
+          - DB_USERNAME: ${DB_USER}
+      - image: circleci/mysql:8.0
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          - MYSQL_DATABASE: ${DB_NAME}
     working_directory: ~/ci-demo
     steps:
       - checkout
@@ -17,15 +24,19 @@ jobs:
           command: sudo docker-php-ext-install pdo_mysql
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-{{ checksum "src/composer.json" }}
             - v1-dependencies-
       - run:
           name: Install PHP libraries
+          working_directory: src
           command: composer install -n --prefer-dist
       - save_cache:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
+      - run: echo "APP_KEY=" > .env.testing
+      - run: php artisan key:generate
+      - run: php artisan migrate
       - run:
           name: Run PHPUnit
           command: vendor/bin/phpunit
