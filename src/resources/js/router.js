@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from './stores'
 
 // ページコンポーネントをインポートする
 import Login from "./pages/Login";
@@ -17,7 +18,16 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/login',
-        component: Login
+        component: Login,
+        // ルートにアクセスされてコンポーネントが切り替わる直前に呼び出す
+        beforeEnter(to, from, next) {
+            if (store.getters['auth/check']) {
+                // ログイン状態なら一覧画面へ遷移
+                next('/kyouan/list')
+            } else {
+                next() // 引数なしならそのままloginコンポーネントを表示
+            }
+        }
     },
     {
         path: '/kyouan/list',

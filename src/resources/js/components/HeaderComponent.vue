@@ -48,7 +48,12 @@
                   <div class="media">
                     <div class="avatar-xs mr-3">
                       <span
-                        class="avatar-title bg-primary rounded-circle font-size-16"
+                        class="
+                          avatar-title
+                          bg-primary
+                          rounded-circle
+                          font-size-16
+                        "
                       >
                         <i class="bx bx-cart"></i>
                       </span>
@@ -113,9 +118,15 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger" href="#"
                 ><i
-                  class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"
+                  class="
+                    bx bx-power-off
+                    font-size-16
+                    align-middle
+                    mr-1
+                    text-danger
+                  "
                 ></i>
-                <span key="t-logout">ログアウト</span></a
+                <span key="t-logout" @click="logout">ログアウト</span></a
               >
             </div>
           </div>
@@ -130,6 +141,13 @@
 
 <script>
 export default {
+  methods: {
+    async logout() {
+      await this.$store.dispatch("auth/logout");
+
+      this.$router.push("/login");
+    },
+  },
   computed: {
     isLogin() {
       return this.$store.getters["auth/check"];

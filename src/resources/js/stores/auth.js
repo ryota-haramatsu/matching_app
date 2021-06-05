@@ -2,7 +2,7 @@
 // クッキーと HTTP ヘッダーを利用する方法
 // クッキーからトークンを取り出して、HTTP ヘッダーに
 
-import Axios from "axios"
+// import Axios from "axios"
 
 // そのトークンを含めてリクエストを送信
 const state = {
@@ -32,18 +32,21 @@ const actions = {
     },
 
     async login(context, data) {
-        await axios.post('/api/login', data).then(res => {
-            context.commit('setUser', res.data);
-            return true;
-        }).catch(error => {
-            //失敗したときの処理
-            return error;
-        });
+        const response = await axios.post('/api/login', data)
+            .catch(error => console.log(error))
+        // この時にvue側のログインステータスが更新されていない？
+        context.commit('setUser', response); //response.dataじゃなく、response返せば良い?
     },
 
     async logout(context) {
         await axios.post('/api/logout')
         context.commit('setUser', null)
+    },
+
+    async currentUser(context) {
+        const response = await axios.get('/api/user')
+        const user = response.data || null
+        context.commit('setUser', user)
     }
 }
 

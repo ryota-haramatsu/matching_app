@@ -3,9 +3,7 @@
 namespace Tests\Feature;
 
 use App\User;
-
 use Tests\TestCase;
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -13,7 +11,7 @@ class LoginApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUP(): void 
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -24,18 +22,16 @@ class LoginApiTest extends TestCase
     /**
      * @test
      */
-    public function should_登録済みのユーザーを認証して返却()
+    public function should_登録済みのユーザーを認証して返却する()
     {
         $response = $this->json('POST', route('login'), [
             'email' => $this->user->email,
-            'password' => 'password' 
-        ]); 
+            'password' => 'password',
+        ]);
 
         $response
             ->assertStatus(200)
-            ->assertJson([
-                'name' => $this->user->name
-            ]);
+            ->assertJson(['name' => $this->user->name]);
 
         $this->assertAuthenticatedAs($this->user);
     }
