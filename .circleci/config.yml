@@ -19,9 +19,10 @@ jobs:
           name: Docker php extensions install
           command: sudo docker-php-ext-install pdo_mysql
 
-      - restore_cache:
+      - restore_cache: 
           keys:
             - v1-dependencies-{{ checksum "src/composer.json" }}
+            - v1-dependencies- # # チェックサムが失敗した場合に使用されます
 
       - run:
           name: composer install
@@ -29,11 +30,6 @@ jobs:
           command: composer install -n --prefer-dist
 
       - save_cache:
-          paths: 
-            - ./vendor
           key: v1-dependencies-{{ checksum "src/composer.json" }}
-          
-      - run:
-          name: Run PHPUnit
-          working_directory: src
-          command: ./vendor/bin/phpunit
+          paths: 
+            - ./src

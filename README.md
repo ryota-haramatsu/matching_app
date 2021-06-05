@@ -37,3 +37,12 @@ mysql -u root -p -h 127.0.0.1 -P 3306 // これ
 docker-compose exec db bash
 
 docker-compose up -d // docker-compose.ymlファイルの更新後
+
+
+circleci
+ローカルジョブ実行
+circleci local execute --job build
+Error: Could not find picard image: failed to pull latest docker image: exit status 1
+
+コードの間違い確認
+circleci config validate
