@@ -38,6 +38,8 @@ docker-compose exec db bash
 
 docker-compose up -d // docker-compose.ymlファイルの更新後
 
+composer require laravel/socialite
+
 
 circleci
 ローカルジョブ実行

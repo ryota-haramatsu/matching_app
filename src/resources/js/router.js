@@ -9,6 +9,7 @@ import KyouanDetailComponent from "./components/KyouanDetailComponent";
 import KyouanCreateComponent from "./components/KyouanCreateComponent";
 import KyouanEditComponent from "./components/KyouanEditComponent";
 import TeacherProfileComponent from "./components/TeacherProfileComponent";
+import SystemError from "./pages/System"
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -57,6 +58,10 @@ const routes = [
         name: 'teacher.profile',
         component: TeacherProfileComponent,
         props: true
+    },
+    {
+        path: '/500',
+        component: SystemError
     }
 ]
 
