@@ -6,8 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
+use App\Http\Controllers\Traits\Vueable;
+
 class VerificationController extends Controller
 {
+    use Vueable;
+
     /*
     |--------------------------------------------------------------------------
     | Email Verification Controller

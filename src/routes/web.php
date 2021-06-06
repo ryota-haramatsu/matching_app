@@ -11,6 +11,12 @@
 |
 */
 
+// socialite
+// socialite 各プロバイダにリダイレクトするルート
+Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->name('socialOAuth');
+// socialite 各プロバイダからのコールバックを受けるルート
+Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('oauthCallback');
+
 Route::get('/{any}', function() {
     return view('app');
 })->where('any', '.*');

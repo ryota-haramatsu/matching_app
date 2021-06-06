@@ -18,6 +18,15 @@
     </ul>
     <!-- ログイン -->
     <div class="panel bg-white" v-show="tab === 1">
+      <!-- LINEログイン -->
+      <h5 class="text-center mb-4">SNSアカウントでログイン</h5>
+      <div class="d-block">
+        <a href="/login/line">
+          <button class="social-button--line">LINEでログイン</button>
+        </a>
+      </div>
+      <v-divider></v-divider>
+      <h5 class="text-center mt-2">メールアドレスでログイン</h5>
       <form class="form" @submit.prevent="login">
         <div class="errors" v-if="loginErrors">
           <!-- メールアドレスのエラー -->
@@ -50,6 +59,15 @@
     </div>
     <!-- 新規登録 -->
     <div class="panel bg-white" v-show="tab === 2">
+      <!-- LINEログイン -->
+      <h5 class="text-center mb-4">SNSアカウントでログイン</h5>
+      <div class="d-block">
+        <a href="/login/line">
+          <button class="social-button--line">LINEで新規登録</button>
+        </a>
+      </div>
+      <v-divider></v-divider>
+      <h5 class="text-center mt-2">メールアドレスで新規登録</h5>
       <form class="form" @submit.prevent="register">
         <div v-if="registerErrors" class="errors">
           <ul v-if="registerErrors.name">
@@ -156,3 +174,31 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.social-button {
+  display: inline-block; /* 水平に並べる */
+  list-style-type: none; /* 先頭のポッチを消す */
+  margin: 2px;
+  padding: 6px 10px;
+  width: 100px;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.social-button--line {
+  background-color: #00c300;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #00c900;
+  }
+  &:active {
+    background-color: #00b300;
+  }
+}
+</style>
