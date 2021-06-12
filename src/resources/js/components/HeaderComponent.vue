@@ -14,6 +14,10 @@
 
         <!-- ログイン済みのみ表示 -->
         <div v-if="isLogin">
+          <!-- ユーザー名 -->
+          <span class="d-none d-xl-inline-block mx-1" key="">
+            {{ username }}
+          </span>
           <!-- 新規作成 -->
           <router-link :to="{ name: 'kyouan.create' }" class="new_create">
             <v-icon>mdi-plus-circle-outline</v-icon>
@@ -96,9 +100,12 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <span class="d-none d-xl-inline-block ml-1" key="">
-                {{ username }}
-              </span>
+              <v-avatar>
+                <img
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
+                />
+              </v-avatar>
               <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">

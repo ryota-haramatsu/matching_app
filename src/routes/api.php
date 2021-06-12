@@ -22,6 +22,9 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 // ログインユーザーを返却
 Route::get('/user', fn() => Auth::user())->name('user');
 
+// 画像投稿
+Route::post('/kyouan/create', 'KyouanController@create')->name('kyouan.create');
+
 Route::get('/tasks', 'TaskController@index');
 Route::post('/tasks', 'TaskController@store');
 Route::get('/tasks/{task}', 'TaskController@show');

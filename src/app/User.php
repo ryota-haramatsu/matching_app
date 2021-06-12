@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function kyouans()
+    {
+        return $this->hasMany('App\Kyouan');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
