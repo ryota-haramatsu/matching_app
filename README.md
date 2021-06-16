@@ -32,7 +32,7 @@ php artisan make:seeder TasksTableSeeder
 
 php artisan migrate --seed
 
-mysql -u root -p -h 127.0.0.1 -P 3306 // これ
+mysql -u root -p -h 127.0.0.1 -P 3306 
 
 docker-compose exec db bash
 
